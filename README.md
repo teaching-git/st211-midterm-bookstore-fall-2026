@@ -27,3 +27,4 @@ pytest -m slow         # only slow tests
 ```
 
 See the assignment instructions (PDF) for what to build and how it is graded.
+# st211-midterm-bookstore-fall-2026
