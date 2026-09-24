@@ -127,20 +127,14 @@ For EACH bug you catch, write a regression test that:
 
 Mark each `@pytest.mark.regression`, and in the docstring describe the bug.
 
-**Known bugs:**
-- Bug #1: The cart total is wrong -- it leaves out the price of the last item.
-- Bug #2: Passwords containing special characters cannot be used to log in.
-- Bug #3: An order can be placed with an empty cart.
-
-**Three more bugs are hidden** in the code. Look carefully at search, order
+**Bugs are hidden** in the code. Look carefully at search, order
 history, and bulk import. Finding and catching them is where the strongest
 groups distinguish themselves.
 
 Marking (per bug, up to 6 bugs):
 - Regression test that correctly fails against the buggy code: 3 marks.
 - Correct fix so the test then passes: 2 marks.
-The first 3 (known) bugs plus finding any of the hidden ones can reach full
-marks; catching all 6 leaves room for the strongest work.
+
 
 ---
 
