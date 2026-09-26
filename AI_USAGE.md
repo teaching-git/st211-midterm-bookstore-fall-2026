@@ -53,12 +53,12 @@ mean the test found a bug — a test demanding behaviour the application was
 never meant to have also fails. You need two runs, and the pair of results is
 what identifies the category:
 
-| Against the shipped code | Against your fixed code | What that pair means | Verdict |
+| Shipped Code | Fixed Code | What This Tells You | Verdict |
 |---|---|---|---|
-| FAIL | PASS | it fails because of a real defect and passes once that defect is gone | **Genuine detection** |
-| PASS | PASS | it never distinguished the two, so it detects nothing — a weak assertion, or it exercises a path where no defect lives | **Detects nothing** |
-| PASS | FAIL | it asserts the *buggy* behaviour as though it were correct, so fixing the bug "breaks" it | **Locks in the bug** |
-| FAIL | FAIL | it fails for a reason that is not one of the defects — it demands something never required | **Invented requirement** |
+| ❌ FAIL | ✅ PASS | The test failed when the bug existed and passed after the bug was fixed. It successfully detected a real defect. | **Genuine detection** |
+| ✅ PASS | ✅ PASS | The test passed before and after the fix. It never noticed the bug, so it provides false confidence. | **Detects nothing** |
+| ✅ PASS | ❌ FAIL | The test expected the buggy behaviour. After the bug was fixed, the test broke. | **Locks in the bug** |
+| ❌ FAIL | ❌ FAIL | The test failed both before and after the fix. It is testing something unrelated to the bug, or a requirement that does not exist. | **Invented requirement** |
 
 The third row is the one to think hardest about. A test that locks in a bug is
 worse than one that detects nothing: a team that trusts its suite will see the
